@@ -35,3 +35,13 @@ This project demonstrates the implementation of a Continuous Integration/Continu
     * HTML
     * CSS
     * JavaScript
+## Architecture
+* (To be included, a high-level architecture diagram here.)
+
+ The architecture involves the following flow:
+ 1.  **Code Changes:** Website source code is managed in an AWS CodeCommit repository.
+ 2.  **Trigger:** Pushing changes to the `main` branch of the CodeCommit repository triggers the CI/CD pipeline.
+ 3.  **Build (AWS CodeBuild):** AWS CodeBuild automatically checks out the code and executes the build steps defined in `buildspec.yml`. For this static website, the "build" phase primarily involves copying files.
+ 4.  **Deploy (AWS CodeDeploy):** Upon a successful build, AWS CodeDeploy deploys the website files to the designated Amazon S3 bucket configured for static website hosting, based on the instructions in `appspec.yml`.
+ 5.  **Content Delivery (Amazon CloudFront):** Amazon CloudFront serves as a CDN, distributing the website content globally from the S3 bucket, providing faster loading times and improved performance for users.
+ 6.   **(Optional) Custom Domain & HTTPS:** Amazon Route 53 manages the custom domain, pointing it to the CloudFront distribution, and AWS Certificate Manager provides the SSL/TLS certificate for secure HTTPS access.
