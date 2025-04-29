@@ -1,7 +1,7 @@
 # Automated Deployment of Personal Portfolio Website
-This project demonstrates the implementation of a Continuous Integration/Continuous Delivery (CI/CD) pipeline for a personal portfolio website hosted on AWS. The goal was to automate the deployment process, ensuring that any updates to the website's source code are automatically built and deployed, resulting in a faster and more efficient update cycle.
+This project demonstrates the implementation of a Continuous Integration/Continuous Delivery (CI/CD) pipeline for a personal portfolio website hosted on AWS. **The goal is to automate the deployment process, ensuring that any updates to the website's source code are automatically built and deployed, resulting in a faster and more efficient update cycle.**
 
-This project involves building a simple personal portfolio website showcasing a user's skills, projects, and contact information. The key aspect is automating the deployment of this website whenever teh dev team make changes to its source code. This will be achieved by setting up a Continuous Integration/Continuous Delivery (CI/CD) pipeline on AWS.
+This project involves building a simple personal portfolio website showcasing a user's skills, projects, and contact information. *The key aspect is automating the deployment of this website whenever teh dev team make changes to its source code*. This will be achieved by setting up a Continuous Integration/Continuous Delivery (CI/CD) pipeline on AWS.
 
 ## Core Functionality:
 **1. Static Website:** A basic personal portfolio website built using HTML, CSS, and JavaScript. It should include sections like "About Me," "Projects," "Skills," and "Contact."
