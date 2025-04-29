@@ -9,9 +9,15 @@ This project involves building a simple personal portfolio website showcasing a 
 
 # Core Functionality:
 **1. Static Website:** A basic personal portfolio website built using HTML, CSS, and JavaScript. It should include sections like "About Me," "Projects," "Skills," and "Contact."
+
 **2. Version Control:** The website's source code will be managed in an AWS CodeCommit repository.
+
 **3. Continuous Integration:** Whenever changes are pushed to the CodeCommit repository (specifically to the main branch), AWS CodeBuild will automatically build the website (though for a static site, this step might be minimal or involve tasks like optimizing assets).
+
 **4. Continuous Delivery:** Once the build process is successful, AWS CodeDeploy will automatically deploy the updated website files to an Amazon S3 bucket configured for static website hosting.
+
 **5. Content Delivery Network (CDN):** Amazon CloudFront will be used to distribute the website content globally with low latency and improved performance.
+
 **6. Custom Domain (Optional):** Configure a custom domain name (e.g., yourname.com) using Amazon Route 53 to access your portfolio.
+
 **7. HTTPS (Optional):** Secure the website with HTTPS using an SSL/TLS certificate provided by AWS Certificate Manager (ACM).
