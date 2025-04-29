@@ -1,13 +1,12 @@
 # aws.ccp.1.static-website-hosting-with-ci-cd-pipeline
-Automated Deployment of a Static Website
-
-# Project: 
-Automated Deployment of a Personal Portfolio Website
-
-# Description:
 This project involves building a simple personal portfolio website showcasing a user's skills, projects, and contact information. The key aspect is automating the deployment of this website whenever teh dev team make changes to its source code. This will be achieved by setting up a Continuous Integration/Continuous Delivery (CI/CD) pipeline on AWS.
 
-# Core Functionality:
+# Automated Deployment of Personal Portfolio Website
+
+## Overview
+This project demonstrates the implementation of a Continuous Integration/Continuous Delivery (CI/CD) pipeline for a personal portfolio website hosted on AWS. The goal was to automate the deployment process, ensuring that any updates to the website's source code are automatically built and deployed, resulting in a faster and more efficient update cycle.
+
+## Core Functionality:
 **1. Static Website:** A basic personal portfolio website built using HTML, CSS, and JavaScript. It should include sections like "About Me," "Projects," "Skills," and "Contact."
 
 **2. Version Control:** The website's source code will be managed in an AWS CodeCommit repository.
@@ -21,3 +20,18 @@ This project involves building a simple personal portfolio website showcasing a 
 **6. Custom Domain (Optional):** Configure a custom domain name (e.g., yourname.com) using Amazon Route 53 to access your portfolio.
 
 **7. HTTPS (Optional):** Secure the website with HTTPS using an SSL/TLS certificate provided by AWS Certificate Manager (ACM).
+
+## Technologies Used
+* **AWS Services:**
+    * Amazon S3
+    * Amazon CloudFront
+    * AWS CodeCommit
+    * AWS CodeBuild
+    * AWS CodeDeploy
+    * AWS IAM
+    * (Optional) Amazon Route 53
+    * (Optional) AWS Certificate Manager (ACM)
+* **Website Technologies:**
+    * HTML
+    * CSS
+    * JavaScript
