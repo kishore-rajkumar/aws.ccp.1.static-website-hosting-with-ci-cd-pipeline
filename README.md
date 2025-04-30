@@ -97,3 +97,21 @@ This project involves building a simple personal portfolio website showcasing a 
 * A custom domain (e.g., `yourportfolio.com`) to be configured in Route 53 to point to the CloudFront distribution's domain name.
 * An SSL/TLS certificate to be requested and validated through ACM and associated with the CloudFront distribution to enable HTTPS.
 
+## Challenges Faced and Solutions
+*(Document any challenges  encountered during the project and how I resolved them. Examples may include issues with IAM permissions, configuring CodeDeploy to work with S3, troubleshooting build failures, etc.)*
+
+## Lessons Learned
+*(Briefly describe what I learned from this project, such as the benefits of CI/CD, the interaction between different AWS services, and best practices for static website hosting.)*
+
+## Future Enhancements
+*(List of potential future improvements or features that could be add to this project, such as:*
+* *Adding a more complex build process (e.g., using a static site generator).*
+* *Implementing automated testing as part of the CI pipeline.*
+* *Setting up notifications for pipeline status changes.*
+* *Exploring different deployment strategies.*
+
+## Link to Code
+*(Link to AWS CodeCommit repository or a mirror on GitHub.)*
+
+## Live Demo
+*(URL of live portfolio website hosted on AWS.)*
