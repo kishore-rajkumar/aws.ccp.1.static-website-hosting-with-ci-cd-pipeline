@@ -22,7 +22,7 @@ This project involves building a simple personal portfolio website showcasing a 
 * **AWS Services:**
     * Amazon S3
     * Amazon CloudFront
-    * AWS CodeCommit
+    * ~~AWS CodeCommit~~ Github
     * AWS CodeBuild
     * AWS CodeDeploy
     * AWS IAM
@@ -37,8 +37,8 @@ This project involves building a simple personal portfolio website showcasing a 
 * (To be included, a high-level architecture diagram here.)
 
  The architecture involves the following flow:
- 1.  **Code Changes:** Website source code is managed in an AWS CodeCommit repository.
- 2.  **Trigger:** Pushing changes to the `main` branch of the CodeCommit repository triggers the CI/CD pipeline.
+ 1.  **Code Changes:** Website source code is managed in an ~~AWS CodeCommit~~ Github repository.
+ 2.  **Trigger:** Pushing changes to the `main` branch of the ~~CodeCommit~~ Github repository triggers the CI/CD pipeline.
  3.  **Build (AWS CodeBuild):** AWS CodeBuild automatically checks out the code and executes the build steps defined in `buildspec.yml`. For this static website, the "build" phase primarily involves copying files.
  4.  **Deploy (AWS CodeDeploy):** Upon a successful build, AWS CodeDeploy deploys the website files to the designated Amazon S3 bucket configured for static website hosting, based on the instructions in `appspec.yml`.
  5.  **Content Delivery (Amazon CloudFront):** Amazon CloudFront serves as a CDN, distributing the website content globally from the S3 bucket, providing faster loading times and improved performance for users.
@@ -48,13 +48,13 @@ This project involves building a simple personal portfolio website showcasing a 
 ### 1. Static Website
 * A simple personal portfolio website was created with sections for "About Me," "Projects," "Skills," and "Contact."
 * The source code is organized logically for easy maintenance.
-### 2. AWS CodeCommit
-* A private Git repository was created in AWS CodeCommit to host the website's source code, enabling version control and collaboration (if applicable).
+### 2. ~~AWS CodeCommit~~ Github
+* A Git repository was created in ~~AWS CodeCommit~~ Github to host the website's source code, enabling version control and collaboration (if appli
 ### 3. Amazon S3
 * An S3 bucket was created and configured for static website hosting.
 * Appropriate public access settings were applied to allow users to view the website.
 ### 4. AWS CodeBuild
-* A CodeBuild project was set up, connected to the CodeCommit repository, with the `main` branch as the source.
+* A CodeBuild project was set up, connected to the ~~CodeCommit~~ Github repository, with the `main` branch as the source.
 * The `buildspec.yml` file defines the build environment and commands (e.g., copying files to the artifact directory).
 
     ```yaml
