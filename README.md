@@ -20,7 +20,7 @@ This project involves building a simple personal portfolio website showcasing a 
 
 ## Architecture
 
-  ![Alt text](Automated-Deployment-of-Personal-Portfolio-Website.drawio(1).png)
+  ![Alt text](ccp.1.architecture.png)
 
  The architecture involves the following flow:
  1.  **Code Changes:** Website source code is managed in an AWS CodeCommit repository.
