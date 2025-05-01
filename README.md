@@ -6,9 +6,9 @@ This project involves building a simple personal portfolio website showcasing a 
 ## Core Functionality:
 **1. Static Website:** A basic personal portfolio website built using HTML, CSS, and JavaScript. It should include sections like "About Me," "Projects," "Skills," and "Contact."
 
-**2. Version Control:** The website's source code will be managed in an AWS CodeCommit repository.
+**2. Version Control:** The website's source code will be managed in an ~~AWS CodeCommit~~ Github repository.
 
-**3. Continuous Integration:** Whenever changes are pushed to the CodeCommit repository (specifically to the main branch), AWS CodeBuild will automatically build the website (though for a static site, this step might be minimal or involve tasks like optimizing assets).
+**3. Continuous Integration:** Whenever changes are pushed to the ~~CodeCommit~~ Github repository (specifically to the main branch), AWS CodeBuild will automatically build the website (though for a static site, this step might be minimal or involve tasks like optimizing assets).
 
 **4. Continuous Delivery:** Once the build process is successful, AWS CodeDeploy will automatically deploy the updated website files to an Amazon S3 bucket configured for static website hosting.
 
@@ -23,8 +23,8 @@ This project involves building a simple personal portfolio website showcasing a 
   ![Alt text](ccp.1.architecture.png)
 
  The architecture involves the following flow:
- 1.  **Code Changes:** Website source code is managed in an AWS CodeCommit repository.
- 2.  **Trigger:** Pushing changes to the `main` branch of the CodeCommit repository triggers the CI/CD pipeline.
+ 1.  **Code Changes:** Website source code is managed in an ~~AWS CodeCommit~~ Github repository.
+ 2.  **Trigger:** Pushing changes to the `main` branch of the ~~CodeCommit~~ Github repository triggers the CI/CD pipeline.
  3.  **Build (AWS CodeBuild):** AWS CodeBuild automatically checks out the code and executes the build steps defined in `buildspec.yml`. For this static website, the "build" phase primarily involves copying files.
  4.  **Deploy (AWS CodeDeploy):** Upon a successful build, AWS CodeDeploy deploys the website files to the designated Amazon S3 bucket configured for static website hosting, based on the instructions in `appspec.yml`.
  5.  **Content Delivery (Amazon CloudFront):** Amazon CloudFront serves as a CDN, distributing the website content globally from the S3 bucket, providing faster loading times and improved performance for users.
@@ -99,7 +99,7 @@ This project involves building a simple personal portfolio website showcasing a 
         destination: /
     ```
 ### 6. AWS IAM
-* Specific IAM roles were created for CodeBuild and CodeDeploy, adhering to the principle of least privilege, granting them only the necessary permissions to interact with CodeCommit, S3, and other relevant services.
+* Specific IAM roles were created for CodeBuild and CodeDeploy, adhering to the principle of least privilege, granting them only the necessary permissions to interact with ~~CodeCommit,~~ S3, and other relevant services.
 ### 7. Amazon CloudFront
 * A CloudFront distribution was created with the S3 static website endpoint as its origin.
 * Default cache behavior was configured for optimal performance.
@@ -110,6 +110,25 @@ This project involves building a simple personal portfolio website showcasing a 
 
 ## Challenges Faced and Solutions
 *(Document any challenges  encountered during the project and how I resolved them. Examples may include issues with IAM permissions, configuring CodeDeploy to work with S3, troubleshooting build failures, etc.)*
+
+### 🔧 Challenge Faced: Adapting CI/CD Architecture Due to AWS Service Limitations 
+
+**Original Plan:**
+The initial CI/CD architecture was designed using AWS CodeCommit as the source code repository, integrated with AWS CodePipeline for continuous integration and deployment.
+
+**Problem Encountered:**
+During implementation, I discovered that AWS no longer allows the creation of new CodeCommit repositories for newly created AWS accounts. This service limitation required a revision of the core infrastructure design.
+
+**Solution:**
+I re-evaluated the architecture and replaced AWS CodeCommit with GitHub as the version control system. Although I was already proficient with GitHub, the integration of GitHub into AWS CodePipeline was new to me.
+
+To resolve this, I:
+* Researched best practices for securely connecting GitHub to AWS CI/CD workflows.
+* Configured GitHub webhooks, AWS CodePipeline, and IAM roles for secure access and automation.
+* Successfully re-architected the pipeline to use GitHub as the source and maintained full deployment automation.
+
+**Outcome:**
+This change improved pipeline flexibility and aligned the project with industry-standard practices using GitHub. It also enhanced my hands-on experience with AWS CI/CD integrations and architectural agility.
 
 ## Lessons Learned
 *(Briefly describe what I learned from this project, such as the benefits of CI/CD, the interaction between different AWS services, and best practices for static website hosting.)*
@@ -122,7 +141,7 @@ This project involves building a simple personal portfolio website showcasing a 
 * *Exploring different deployment strategies.*
 
 ## Link to Code
-*(Link to AWS CodeCommit repository or a mirror on GitHub.)*
+*(Link to ~~AWS CodeCommit~~ Github repository or a mirror on GitHub.)*
 
 ## Live Demo
 *(URL of live portfolio website hosted on AWS.)*
