@@ -111,6 +111,25 @@ This project involves building a simple personal portfolio website showcasing a 
 ## Challenges Faced and Solutions
 *(Document any challenges  encountered during the project and how I resolved them. Examples may include issues with IAM permissions, configuring CodeDeploy to work with S3, troubleshooting build failures, etc.)*
 
+### 🔧 Challenge Faced: Adapting CI/CD Architecture Due to AWS Service Limitations 
+
+**Original Plan:**
+The initial CI/CD architecture was designed using AWS CodeCommit as the source code repository, integrated with AWS CodePipeline for continuous integration and deployment.
+
+**Problem Encountered:**
+During implementation, I discovered that AWS no longer allows the creation of new CodeCommit repositories for newly created AWS accounts. This service limitation required a revision of the core infrastructure design.
+
+**Solution:**
+I re-evaluated the architecture and replaced AWS CodeCommit with GitHub as the version control system. Although I was already proficient with GitHub, the integration of GitHub into AWS CodePipeline was new to me.
+
+To resolve this, I:
+* Researched best practices for securely connecting GitHub to AWS CI/CD workflows.
+* Configured GitHub webhooks, AWS CodePipeline, and IAM roles for secure access and automation.
+* Successfully re-architected the pipeline to use GitHub as the source and maintained full deployment automation.
+
+**Outcome:**
+This change improved pipeline flexibility and aligned the project with industry-standard practices using GitHub. It also enhanced my hands-on experience with AWS CI/CD integrations and architectural agility.
+
 ## Lessons Learned
 *(Briefly describe what I learned from this project, such as the benefits of CI/CD, the interaction between different AWS services, and best practices for static website hosting.)*
 
