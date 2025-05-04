@@ -75,15 +75,8 @@ This project involves building a simple personal portfolio website showcasing a 
     phases:
       build:
         commands:
-          echo "Building static website..."
-          # For a simple static site, this might just be preparing artifacts
-          - aws s3 sync . $CODEBUILD_SRC_DIR --exclude ".git*"
-
-    artifacts:
-      files:
-        - '**/*'
-      base-directory: $CODEBUILD_SRC_DIR
-      discard-paths: yes
+          - echo "Building static website..." + $CODEBUILD_SRC_DIR
+          - aws s3 sync $CODEBUILD_SRC_DIR/code s3://com.portfolio.personal --exclude ".git*"
     ```
 ### 5. AWS CodeDeploy
 * A CodeDeploy application and deployment group were created, targeting the S3 bucket.
