@@ -73,10 +73,24 @@ This project involves building a simple personal portfolio website showcasing a 
     version: 0.2
 
     phases:
+      install:
+          runtime-versions:
+            nodejs: latest # While not strictly needed, CodeBuild requires a runtime
       build:
         commands:
-          - echo "Building static website..." + $CODEBUILD_SRC_DIR
-          - aws s3 sync $CODEBUILD_SRC_DIR/code s3://com.portfolio.personal --exclude ".git*"
+          - echo "Zipping the source code from the 'code' subdirectory..."
+          - cd code
+          - zip -r ../website.zip *
+          - cd ..
+      post_build:
+        commands:
+          - echo "Uploading the zipped artifact to S3..."
+          #- aws s3 cp website.zip s3://ccp-artifacts-s3-cicd/website.zip
+          
+    artifacts:
+      files:
+        - website.zip
+      discard-paths: yes
     ```
 ### 5. AWS CodeDeploy
 * A CodeDeploy application and deployment group were created, targeting the S3 bucket.
